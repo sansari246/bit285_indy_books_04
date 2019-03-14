@@ -7,7 +7,7 @@ namespace IndyBooks.Models
     {
         public IndyBooksDataContext(DbContextOptions<IndyBooksDataContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         //Define DbSets for Collections representing DB tables
@@ -29,7 +29,7 @@ namespace IndyBooks.Models
         // - https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=localhost,1433; Database=IndyBooks;User=SA; Password=Pa$$word!");
+            optionsBuilder.UseSqlServer("Server=localhost,1433; Database=IndyBooks;User=SA; Password=<YourStrong!Passw0rd>");
         }
     }
 }
